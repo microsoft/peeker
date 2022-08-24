@@ -1,0 +1,36 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <NoBuild>true</NoBuild>
+    <IsTool>true</IsTool>
+    <IncludeBuildOutput>false</IncludeBuildOutput>
+    <GenerateDependencyFile>false</GenerateDependencyFile>
+    <CopyLocalLockFileAssemblies>true</CopyLocalLockFileAssemblies>
+    
+    <PackageOutputPath Condition="'$(PackageOutputPath)' == ''">package\</PackageOutputPath>
+    <NugetPackageName Condition="'$(NugetPackageName)' == ''">Peeker</NugetPackageName>
+    <PackageId>$(NugetPackageName)</PackageId>
+    <Authors>Microsoft</Authors>
+    <Copyright>Microsoft</Copyright>
+    <PackageDescription>.NET binary analyzer</PackageDescription>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <PackageProjectURL>https://github.com/microsoft/peeker</PackageProjectURL>
+    <PackageTags>SDL;SDT;secure development tools;security;static analysis;Peeker</PackageTags>
+    <RepositoryType>git</RepositoryType>
+    <RepositoryUrl>https://github.com/microsoft/peeker</RepositoryUrl>
+  </PropertyGroup>
+  
+  <ItemGroup>
+    <None Include="Peeker\bin\$(Configuration)\net6.0\*.dll; Peeker\bin\$(Configuration)\net6.0\*.json">
+      <Pack>true</Pack>
+      <PackagePath>tools\</PackagePath>
+    </None>
+    
+     <None Include="NOTICE.md">
+        <Pack>true</Pack>
+        <PackagePath></PackagePath>
+     </None>
+  </ItemGroup>
+
+</Project>

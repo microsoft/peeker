@@ -1,14 +1,23 @@
-# Project
+---
+ArtifactType: executable
+Documentation: N/A
+Language: csharp
+Platform: windows, linux
+Stackoverflow: N/A
+Tags: roslyn,analyzers,precompiled
+---
 
-> This repo has been populated by an initial template to help get you started. Please
-> make sure to update the content to build a great experience for community-building.
+# Peeker
 
-As the maintainer of this project, please make a few updates:
+Peeker is a tool that runs Roslyn code analyzers on precompiled .NET binaries. If source mappings are provided in the form of a PDB file, the inspection results are associated with the original source locations. Peeker outputs its results in the SARIF file format.
 
-- Improving this README.MD file to provide a great experience
-- Updating SUPPORT.MD with content about this project's support experience
-- Understanding the security reporting process in SECURITY.MD
-- Remove this section from the README
+## Getting Started
+
+Clone Peeker and build with `dotnet build`. In use, you will need to supply libraries that provide Roslyn analyzers (i.e. Microsoft.CodeQuality.Analyzers.dll) and their dependencies.
+
+### Prerequisites
+
+.NET 6.0
 
 ## Contributing
 
@@ -23,6 +32,16 @@ provided by the bot. You will only need to do this once across all repos using o
 This project has adopted the [Microsoft Open Source Code of Conduct](https://opensource.microsoft.com/codeofconduct/).
 For more information see the [Code of Conduct FAQ](https://opensource.microsoft.com/codeofconduct/faq/) or
 contact [opencode@microsoft.com](mailto:opencode@microsoft.com) with any additional questions or comments.
+
+## Versioning and changelog
+
+We use [SemVer](http://semver.org/) for versioning. For the versions available, see the tags on this repository.
+
+## Acknowledgments
+
+* This project makes great use of [ILSpy](https://github.com/ICSharpCode/ILSpy), a third party .NET decompilation library.
+
+See also [NOTICE.md](https://github.com/microsoft/peeker/blob/main/NOTICE.md).
 
 ## Trademarks
 
